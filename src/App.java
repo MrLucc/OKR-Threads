@@ -9,7 +9,7 @@ public class App {
     private static final int NUM_TASKS = 5;
     private static final int PROCESSING_TIME_MS = 1000; // 1 segundo
 
-    public static void main(String[] args) throws Exception {
+    void main() throws Exception {
         System.out.println("=== Demonstração de Threads em Java ===\n");
 
         List<TaskProcessor> tasks = criarTarefas();

@@ -12,10 +12,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("=== Demonstração de Threads em Java ===\n");
 
-        // Criar lista de tarefas
         List<TaskProcessor> tasks = criarTarefas();
 
-        // 1. Execução Sequencial
         System.out.println("--- 1. EXECUÇÃO SEQUENCIAL ---");
         long inicioSequencial = System.currentTimeMillis();
         executarSequencial(tasks);
@@ -24,7 +22,6 @@ public class App {
 
         Thread.sleep(500);
 
-        // 2. Execução com Threads básicas
         System.out.println("--- 2. EXECUÇÃO COM THREADS BÁSICAS ---");
         long inicioThreads = System.currentTimeMillis();
         executarComThreads(tasks);
@@ -33,14 +30,13 @@ public class App {
 
         Thread.sleep(500);
 
-        // 3. Execução com ThreadPool
         System.out.println("--- 3. EXECUÇÃO COM THREAD POOL ---");
         long inicioThreadPool = System.currentTimeMillis();
         executarComThreadPool(tasks);
         long tempoThreadPool = System.currentTimeMillis() - inicioThreadPool;
         System.out.println("Tempo total com ThreadPool: " + tempoThreadPool + "ms\n");
 
-        // Resumo
+
         System.out.println("=== RESUMO DOS RESULTADOS ===");
         System.out.println("Sequencial: " + tempoSequencial + "ms");
         System.out.println("Threads básicas: " + tempoThreads + "ms");
